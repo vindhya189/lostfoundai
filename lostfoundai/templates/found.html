@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Report Found Item</title>
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+
+<body>
+
+<div class="lost-container">
+
+<h1>🎒 Report Found Item</h1>
+
+<form action="/submit_found"
+      method="POST"
+      enctype="multipart/form-data">
+ 
+<input type="text" name="item_name" placeholder="Item Name" required>
+
+<select  name="category" required>
+<option>Select Category</option>
+<option>Wallet</option>
+<option>Phone</option>
+<option>ID Card</option>
+<option>Keys</option>
+<option>Bag</option>
+<option>Laptop</option>
+<option>Other</option>
+</select>
+
+<div class="upload-box">
+<label for="imageUpload">
+📸 Upload Item Image
+</label>
+
+<input
+type="file"
+id="imageUpload"
+name="image"
+accept="image/*"
+hidden>
+</div>
+
+<img
+id="preview"
+style="display:none;">
+
+<input
+type="text"
+name="location"
+placeholder=" Found Location"
+required>
+
+<input
+type="date"
+name ="lost_date"
+required>
+
+<textarea
+name ="description"
+rows="3"
+placeholder="Item Description"
+required></textarea>
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number"
+required>
+
+<button type="submit">
+Submit Found Report
+</button>
+
+</form>
+
+</div>
+<script src="{{ url_for('static', filename='js/lost.js') }}"></script>
+
+</body>
+</html>

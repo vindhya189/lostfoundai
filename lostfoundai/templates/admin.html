@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    min-height:100vh;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+.admin-title{
+    text-align:center;
+    font-size:50px;
+    margin-top:30px;
+    color:#00ffff;
+}
+
+.admin-subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    margin-bottom:40px;
+}
+
+.admin-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    padding:40px;
+}
+
+.admin-card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,.15);
+}
+
+.admin-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 0 35px cyan;
+}
+
+.admin-card h2{
+
+    font-size:55px;
+
+    color:#00ffff;
+}
+
+.admin-card p{
+
+    font-size:20px;
+}
+
+.admin-btn{
+
+    display:block;
+
+    width:250px;
+
+    margin:30px auto;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #00ffff,
+    #00ff99);
+
+    color:black;
+
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="admin-title">
+🛡 Admin Dashboard
+</h1>
+
+<p class="admin-subtitle">
+LostFound AI Control Center
+</p>
+
+<div class="admin-grid">
+
+<div class="admin-card">
+<h2>{{ total_users }}</h2>
+<p>👥 Total Users</p>
+</div>
+
+<div class="admin-card">
+<h2>{{ total_lost }}</h2>
+<p>🎒 Lost Reports</p>
+</div>
+
+<div class="admin-card">
+<h2>{{ total_found }}</h2>
+<p>📦 Found Reports</p>
+</div>
+
+<div class="admin-card">
+<h2>{{ total_lost + total_found }}</h2>
+<p>📊 Total Reports</p>
+</div>
+
+</div>
+
+<a href="/home" class="admin-btn">
+🏠 Back To Home
+</a>
+
+</body>
+</html>

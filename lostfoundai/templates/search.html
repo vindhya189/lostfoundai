@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search Items</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="lost-container">
+
+<h1>🔍 Search Items</h1>
+
+<form action="/search_item" method="GET">
+
+<input
+type="text"
+name="keyword"
+placeholder="Search Item">
+
+<button type="submit">
+Search
+</button>
+
+</form>
+
+{% if results %}
+
+<h2>Results</h2>
+
+{% for item in results %}
+
+<div class="search-card">
+
+{% if item[7] %}
+
+<img
+src="{{ url_for('static',
+filename='uploads/' + item[7]) }}"
+class="search-image">
+
+{% endif %}
+
+<h3>{{ item[1] }}</h3>
+
+<p><b>Category:</b> {{ item[2] }}</p>
+
+<p><b>Description:</b> {{ item[3] }}</p>
+
+<p><b>Location:</b> {{ item[4] }}</p>
+
+<p><b>Phone:</b> {{ item[6] }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+{% if results is not none and results|length == 0 %}
+
+<div class="search-card">
+
+<h2>❌ No Items Found</h2>
+
+<p>Try another keyword.</p>
+
+</div>
+
+{% endif %}
+
+
+</div>
+
+</body>
+</html>

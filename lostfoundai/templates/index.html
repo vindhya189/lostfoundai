@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lost Found AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+<button id="themeToggle">
+🌙
+</button>
+
+<div class="logo">
+LostFound AI
+</div>
+
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/lost">Lost</a></li>
+<li><a href="/found">Found</a></li>
+<li><a href="/search">Search</a></li>
+<li><a href="/match">AI Match</a></li>
+{% if username %}
+
+<li>
+👤 {{ username }}
+</li>
+
+<li>
+<a href="/logout">
+Logout
+</a>
+</li>
+
+{% else %}
+
+<li>
+<a href="/register">
+Register
+</a>
+</li>
+
+<li>
+<a href="/login">
+Login
+</a>
+</li>
+
+{% endif %}
+</ul>
+<li><a href="/admin">Admin</a></li>
+</nav>
+
+<section class="hero">
+    <div class="bg-items">
+
+<div class="floating-item">📱 </div>
+<div class="floating-item">🎒 </div>
+<div class="floating-item">💳 </div>
+<div class="floating-item">🔑 </div>
+<div class="floating-item">💻 </div>
+
+
+</div>
+    <div class="hero-badge">
+    🚀 AI Powered Campus Recovery System
+</div>
+
+<h1>
+    Find Lost Items
+    <span>In Minutes</span>
+</h1>
+
+<p>
+    Smart AI matching, image recognition and instant contact system
+</p>
+
+<div class="buttons">
+    <a href="/lost">
+        <button>🎒 Report Lost</button>
+    </a>
+
+    <a href="/found">
+        <button>📦 Report Found</button>
+    </a>
+    <a href="/match">
+<button>
+🤖 View Matches
+</button>
+</a>
+</div>
+</section>
+<section class="stats">
+
+<div class="card">
+<h2>{{ lost_count }}</h2>
+<p>🎒 Lost Reports</p>
+</div>
+
+<div class="card">
+<h2>{{ found_count }}</h2>
+<p>📦 Found Reports</p>
+</div>
+
+<div class="card">
+<h2>{{ total_reports }}</h2>
+<p>📊 Total Reports</p>
+</div>
+
+<div class="card">
+<h2>95%</h2>
+<p>🤖 AI Accuracy</p>
+</div>
+
+</section>
+<section class="how">
+
+<h1>How It Works</h1>
+
+<div class="steps">
+
+<div class="step">
+📸
+<h3>Upload Item</h3>
+</div>
+
+<div class="step">
+🤖
+<h3>AI Matching</h3>
+</div>
+
+<div class="step">
+🔔
+<h3>Notification</h3>
+</div>
+
+<div class="step">
+🤝
+<h3>Recover Item</h3>
+</div>
+
+</div>
+
+</section>
+<section class="features">
+
+<h1>AI Features</h1>
+
+<div class="feature-box">
+
+<div class="feature-card">
+🤖
+<h3>AI Image Matching</h3>
+<p>Find similar items automatically</p>
+</div>
+
+<div class="feature-card">
+📝
+<h3>OCR Detection</h3>
+<p>Read names from ID cards</p>
+</div>
+
+<div class="feature-card">
+📍
+<h3>Location Tracking</h3>
+<p>Find lost item locations</p>
+</div>
+
+<div class="feature-card">
+💬
+<h3>Live Chat</h3>
+<p>Connect owner and finder</p>
+</div>
+
+<div class="feature-card">
+🔔
+<h3>Smart Notifications</h3>
+<p>Email & WhatsApp alerts</p>
+</div>
+
+<div class="feature-card">
+🛡️
+<h3>Fraud Detection</h3>
+<p>Prevent fake reports</p>
+</div>
+
+</div>
+
+</section>
+<section class="testimonials">
+
+<h1>Success Stories</h1>python <app class="py"></app>
+
+<div class="testimonial-card">
+"Naa ID card 2 rojullo dorikindi."
+</div>
+
+<div class="testimonial-card">
+"Naa wallet AI match chesi recover ayindi."
+</div>
+
+<div class="testimonial-card">
+"Campus lo best system."
+</div>
+
+</section>
+<footer>
+
+<h2>LostFound AI</h2>
+
+<p>AI Powered Campus Recovery System</p>
+
+<p>Email: support@lostfoundai.com</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+<div id="particles-js"></div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
